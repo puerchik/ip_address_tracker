@@ -7,10 +7,10 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "app/*": ["src/app"],
-      "pages/*": ["src/pages"],
-      "components/*": ["src/components"],
-      "shared/*": ["src/shared"]
+      "app/*": ["src/app/*"],
+      "pages/*": ["src/pages/*"],
+      "components/*": ["src/components/*"],
+      "shared/*": ["src/shared/*"]
     },
 
     /* Bundler mode */
