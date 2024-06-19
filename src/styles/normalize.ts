@@ -67,6 +67,10 @@ button {
   font: inherit;
 }
 
+ol, ul {
+	list-style: none;
+}
+
 html,
 body,
 #root {

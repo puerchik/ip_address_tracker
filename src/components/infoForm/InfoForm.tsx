@@ -1,3 +1,4 @@
+import { IPinfo } from 'components/IPinfo'
 import { SearchInput } from 'components/SearchInput'
 import styled from 'styled-components'
 
@@ -7,6 +8,7 @@ export const InfoForm = () => {
       <S.InfoFormInner>
         <S.Title>IP Address Tracker</S.Title>
         <SearchInput />
+        <IPinfo />
       </S.InfoFormInner>
     </>
   )
