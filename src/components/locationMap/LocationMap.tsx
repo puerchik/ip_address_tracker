@@ -8,30 +8,33 @@ import heagerImgMobile from 'assets/images/pattern-bg-mobile.png'
 export const LocationMap = () => {
   return (
     <>
-      <Wrapper>
+      <S.Wrapper>
         <picture>
           <source srcSet={heagerImgMobile} media="(max-width: 375px)" />
-          <HeaderImage src={heagerImgDesktop} />
+          <S.HeaderImage src={heagerImgDesktop} />
         </picture>
-        <Location></Location>
-      </Wrapper>
+        <S.Location></S.Location>
+      </S.Wrapper>
     </>
   )
 }
 
-const Wrapper = styled.div`
-  ${Flex}
+const S = {
+  Wrapper: styled.div`
+    ${Flex}
 
-  flex-direction: column;
-  min-height: 100%;
-`
+    flex-direction: column;
+    min-height: 100%;
+  `,
 
-const HeaderImage = styled.img`
-  width: 100%;
-  height: auto;
-`
-const Location = styled.div`
-  flex-grow: 1;
-  width: 100%;
-  background-color: green;
-`
+  HeaderImage: styled.img`
+    width: 100%;
+    height: auto;
+  `,
+
+  Location: styled.div`
+    flex-grow: 1;
+    width: 100%;
+    background-color: green;
+  `,
+}

@@ -6,15 +6,17 @@ import { InfoForm } from 'components/infoForm'
 export const Tracker = () => {
   return (
     <>
-      <Main>
+      <S.Main>
         <LocationMap />
         <InfoForm />
-      </Main>
+      </S.Main>
     </>
   )
 }
 
-const Main = styled.main`
-  position: relative;
-  height: 100%;
-`
+const S = {
+  Main: styled.main`
+    position: relative;
+    height: 100%;
+  `,
+}
