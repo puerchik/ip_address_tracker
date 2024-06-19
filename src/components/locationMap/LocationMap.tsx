@@ -13,7 +13,7 @@ export const LocationMap = () => {
           <source srcSet={heagerImgMobile} media="(max-width: 375px)" />
           <HeaderImage src={heagerImgDesktop} />
         </picture>
-        <Location />
+        <Location></Location>
       </Wrapper>
     </>
   )
@@ -21,6 +21,7 @@ export const LocationMap = () => {
 
 const Wrapper = styled.div`
   ${Flex}
+
   flex-direction: column;
   min-height: 100%;
 `
@@ -31,6 +32,6 @@ const HeaderImage = styled.img`
 `
 const Location = styled.div`
   flex-grow: 1;
-  background-color: green;
   width: 100%;
+  background-color: green;
 `
