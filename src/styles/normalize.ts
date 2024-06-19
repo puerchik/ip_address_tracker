@@ -67,7 +67,9 @@ button {
   font: inherit;
 }
 
-html {
+html,
+body,
+#root {
   height: 100%;
 }
 

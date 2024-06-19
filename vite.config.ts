@@ -11,6 +11,7 @@ export default defineConfig({
       components: path.resolve(__dirname, './src/components'),
       styles: path.resolve(__dirname, './src/styles'),
       shared: path.resolve(__dirname, './src/shared'),
+      assets: path.resolve(__dirname, './src/assets'),
     },
   },
   plugins: [react()],
