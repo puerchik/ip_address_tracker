@@ -35,11 +35,14 @@ const S = {
     display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: 30px;
+    padding-inline: 15px;
   `,
 
   Title: styled.h1`
     color: white;
     font-size: 36px;
     font-weight: 500;
+    padding-top: 30px;
   `,
 }

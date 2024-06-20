@@ -17,5 +17,6 @@ const S = {
   InfoList: styled.ul`
     display: flex;
     column-gap: 15px;
+    padding-top: 10px;
   `,
 }
