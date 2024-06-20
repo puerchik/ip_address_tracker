@@ -44,4 +44,5 @@ type Timezone = {
 }
 
 export type IpTracker = Pick<IpResponse, 'ip' | 'city' | 'region_code' | 'postal'> &
-  Pick<Connection, 'isp'>
+  Pick<Connection, 'isp'> &
+  Pick<Timezone, 'utc'>
