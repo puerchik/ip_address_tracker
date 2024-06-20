@@ -1,4 +1,6 @@
+import { fetchIpInfo } from 'app/store/ipTrackerSlice'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { useAppDispatch } from 'shared/hooks/reduxHooks'
 import styled from 'styled-components'
 
 type Inputs = {
@@ -6,9 +8,12 @@ type Inputs = {
 }
 
 export const SearchInput = () => {
+  const dispatch = useAppDispatch()
   const { register, handleSubmit } = useForm<Inputs>()
 
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data.ip)
+  const onSubmit: SubmitHandler<Inputs> = data => {
+    dispatch(fetchIpInfo(data.ip))
+  }
 
   return (
     <>

@@ -7,7 +7,7 @@ import { IpResponse, IpTracker } from 'shared/types/response'
 const initialState: IpTracker = {
   ip: '',
   city: '',
-  region_code: '',
+  country: '',
   postal: '',
   isp: '',
   utc: '',
@@ -37,7 +37,7 @@ const ipTrackerSlice = createSlice({
     builder.addCase(fetchIpInfo.fulfilled, (state, action) => {
       state.ip = action.payload.ip
       state.city = action.payload.city
-      state.region_code = action.payload.region_code
+      state.country = action.payload.country
       state.postal = action.payload.postal
       state.isp = action.payload.connection.isp
       state.utc = action.payload.timezone.utc
