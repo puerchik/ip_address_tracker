@@ -1,18 +1,20 @@
-import { IPinfo } from 'components/IPinfo'
-import { SearchInput } from 'components/SearchInput'
 import { useEffect } from 'react'
-import { getIp } from 'shared/api'
 import styled from 'styled-components'
 
+import { fetchIpInfo } from 'app/store/ipTrackerSlice'
+
+import { IPinfo } from 'components/IPinfo'
+import { SearchInput } from 'components/SearchInput'
+import { useAppDispatch, useAppSelector } from 'shared/hooks/reduxHooks'
+
 export const InfoForm = () => {
-  const setIp = async () => {
-    const res = await getIp('192.212.174.101')
-    console.log(res.data)
-  }
+  const ipInfo = useAppSelector(state => state.ipTracker)
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
-    setIp()
+    dispatch(fetchIpInfo('192.212.174.101'))
   }, [])
+  console.log(ipInfo)
 
   return (
     <>
