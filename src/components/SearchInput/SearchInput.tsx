@@ -33,13 +33,16 @@ const S = {
     position: relative;
     width: 100%;
     max-width: 550px;
+    margin-bottom: 10px;
   `,
+
   Input: styled.input`
     width: 100%;
     padding: 20px;
     border: none;
     border-radius: 15px;
   `,
+
   Button: styled.button`
     ${ResetButton}
     position: absolute;
@@ -72,9 +75,11 @@ const S = {
     @media (hover: hover) {
       &:hover {
         opacity: 0.8;
+        cursor: pointer;
       }
     }
   `,
+
   HiddenText: styled.span`
     ${VisuallyHidden}
   `,

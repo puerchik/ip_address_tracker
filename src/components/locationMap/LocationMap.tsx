@@ -35,6 +35,6 @@ const S = {
   Location: styled.div`
     flex-grow: 1;
     width: 100%;
-    background-color: green;
+    background-color: #fff;
   `,
 }

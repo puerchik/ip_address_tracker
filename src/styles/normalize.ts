@@ -84,7 +84,7 @@ html,
 
 body {
   min-height: 100%;
-  line-height: 1.5;
+  line-height: 1.3;
 }
 
 svg *[fill] { fill: currentColor }
