@@ -11,6 +11,8 @@ const initialState: IpTracker = {
   postal: '',
   isp: '',
   utc: '',
+  longitude: 0,
+  latitude: 0,
 }
 
 export const fetchIpInfo = createAsyncThunk<IpResponse, string, { rejectValue: RejectedDataType }>(
@@ -41,6 +43,8 @@ const ipTrackerSlice = createSlice({
       state.postal = action.payload.postal
       state.isp = action.payload.connection.isp
       state.utc = action.payload.timezone.utc
+      state.longitude = action.payload.longitude
+      state.latitude = action.payload.latitude
     })
   },
 })

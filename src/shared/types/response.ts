@@ -43,6 +43,9 @@ type Timezone = {
   current_time: string
 }
 
-export type IpTracker = Pick<IpResponse, 'ip' | 'city' | 'country' | 'postal'> &
+export type IpTracker = Pick<
+  IpResponse,
+  'ip' | 'city' | 'country' | 'postal' | 'latitude' | 'longitude'
+> &
   Pick<Connection, 'isp'> &
   Pick<Timezone, 'utc'>

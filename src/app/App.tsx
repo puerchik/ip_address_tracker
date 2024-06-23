@@ -1,6 +1,6 @@
 import { Tracker } from 'pages/tracker'
-import { GlobalStyle } from 'styles/GlobalStyle'
 
+import { GlobalStyle } from 'styles/GlobalStyle'
 import { Normalize } from 'styles/normalize'
 
 function App() {
