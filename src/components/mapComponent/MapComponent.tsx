@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { useAppSelector } from 'shared/hooks/reduxHooks'
 
-import { fromLonLat, useGeographic } from 'ol/proj'
+import { useGeographic } from 'ol/proj'
 import VectorSource from 'ol/source/Vector'
 import VectorLayer from 'ol/layer/Vector'
 import TileLayer from 'ol/layer/Tile'
@@ -39,7 +39,7 @@ export const MapComponent = () => {
     const pinStyle = new Style({
       image: new Icon({
         src: pinIcon,
-        anchor: [0.5, 1.1],
+        anchor: [0.5, 1.2],
         anchorXUnits: 'fraction',
         anchorYUnits: 'fraction',
       }),
