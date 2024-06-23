@@ -39,8 +39,20 @@ const S = {
   Input: styled.input`
     width: 100%;
     padding: 20px;
+    padding-right: 80px;
     border: none;
     border-radius: 15px;
+
+    @media (max-width: 780px) {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 25px;
+      padding: 15px;
+      padding-right: 70px;
+
+      &::placeholder {
+        font-size: 10px;
+      }
+    }
   `,
 
   Button: styled.button`

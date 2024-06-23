@@ -24,8 +24,6 @@ export const MapComponent = () => {
   const latitude = useAppSelector(state => state.ipTracker.latitude)
 
   useEffect(() => {
-    console.log('map rendered')
-
     useGeographic()
 
     if (!mapElement.current) return
