@@ -5,16 +5,14 @@ import { fetchIpInfo } from 'app/store/ipTrackerSlice'
 
 import { IPinfo } from 'components/IPinfo'
 import { SearchInput } from 'components/SearchInput'
-import { useAppDispatch, useAppSelector } from 'shared/hooks/reduxHooks'
+import { useAppDispatch } from 'shared/hooks/reduxHooks'
 
 export const InfoForm = () => {
-  const ipInfo = useAppSelector(state => state.ipTracker)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
     dispatch(fetchIpInfo('194.58.112.174'))
   }, [])
-  console.log(ipInfo)
 
   return (
     <>

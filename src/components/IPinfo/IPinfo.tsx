@@ -2,7 +2,8 @@ import { useAppSelector } from 'shared/hooks/reduxHooks'
 import styled from 'styled-components'
 
 export const IPinfo = () => {
-  const info = useAppSelector(state => state.ipTracker)
+  const info = useAppSelector(state => state.ipTracker.ipInfo)
+  console.log(info)
 
   return (
     <>

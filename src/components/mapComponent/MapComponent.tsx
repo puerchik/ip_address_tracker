@@ -20,8 +20,8 @@ import Icon from 'ol/style/Icon'
 
 export const MapComponent = () => {
   const mapElement = useRef(null)
-  const longitude = useAppSelector(state => state.ipTracker.longitude)
-  const latitude = useAppSelector(state => state.ipTracker.latitude)
+  const longitude = useAppSelector(state => state.ipTracker.ipInfo.longitude)
+  const latitude = useAppSelector(state => state.ipTracker.ipInfo.latitude)
 
   useEffect(() => {
     useGeographic()

@@ -16,6 +16,7 @@ export type IpResponse = {
   calling_code: string
   capital: string
   borders: string
+  message?: string
   flag: Flag
   connection: Connection
   timezone: Timezone
