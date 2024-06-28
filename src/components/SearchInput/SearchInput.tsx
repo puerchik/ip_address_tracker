@@ -40,6 +40,7 @@ export const SearchInput = () => {
 
         <S.Button type="submit">
           <S.HiddenText>search</S.HiddenText>
+          <img src={arrowIcon} alt="" />
         </S.Button>
       </S.Form>
       {errors.ip && <S.ErrorMessage>{errors.ip.message}</S.ErrorMessage>}
@@ -85,7 +86,7 @@ const S = {
     border-bottom-right-radius: 15px;
     background-color: #000000;
     transition: 0.2s;
-
+    /* 
     &::after {
       content: '';
       position: absolute;
@@ -95,6 +96,13 @@ const S = {
       width: 15px;
       aspect-ratio: 1;
       background: url(${arrowIcon}) center/contain no-repeat;
+    } */
+
+    & img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     @media (hover: none) {
