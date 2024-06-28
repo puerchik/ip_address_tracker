@@ -6,6 +6,7 @@ import { useAppSelector } from 'shared/hooks/reduxHooks'
 import { useGeographic } from 'ol/proj'
 import VectorSource from 'ol/source/Vector'
 import VectorLayer from 'ol/layer/Vector'
+import { ZoomSlider } from 'ol/control'
 import TileLayer from 'ol/layer/Tile'
 import Point from 'ol/geom/Point'
 import Feature from 'ol/Feature'
@@ -53,6 +54,8 @@ export const MapComponent = () => {
       source: pinSource,
     })
 
+    const zoomSlider = new ZoomSlider()
+
     const map = new Map({
       target: mapElement.current,
       layers: [
@@ -61,6 +64,7 @@ export const MapComponent = () => {
         }),
         pinLayer,
       ],
+      controls: [zoomSlider],
       view: new View({
         center: [longitude, latitude],
         zoom: 10,
