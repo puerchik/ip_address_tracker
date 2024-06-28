@@ -4,6 +4,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/ip_address_tracker',
   resolve: {
     alias: {
       app: path.resolve(__dirname, './src/app'),
