@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
 import styled from 'styled-components'
 
-import { fetchIpInfo } from 'app/store/ipTrackerSlice'
+import { fetchIpInfo, setError } from 'app/store/ipTrackerSlice'
 import { useAppDispatch } from 'shared/hooks/reduxHooks'
 
 import { ResetButton, VisuallyHidden } from 'styles/common'
@@ -10,20 +10,39 @@ import arrowIcon from 'assets/images/icon-arrow.svg'
 
 export const SearchInput = () => {
   const dispatch = useAppDispatch()
-  const { register, handleSubmit } = useForm<{ ip: string }>()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<{ ip: string }>()
+
+  const ipv4Regex =
+    /^\s*\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b\s*$/
 
   const onSubmit: SubmitHandler<{ ip: string }> = data => {
     dispatch(fetchIpInfo(data.ip))
+    dispatch(setError(false))
   }
 
   return (
     <>
       <S.Form onSubmit={handleSubmit(onSubmit)}>
-        <S.Input {...register('ip')} placeholder="Search for any IP address or domain" />
+        <S.Input
+          {...register('ip', {
+            required: true,
+            pattern: {
+              value: ipv4Regex,
+              message: 'Please enter a valid IPv4 address',
+            },
+          })}
+          placeholder="Search for any IP address (IPv4)"
+        />
+
         <S.Button type="submit">
           <S.HiddenText>search</S.HiddenText>
         </S.Button>
       </S.Form>
+      {errors.ip && <S.ErrorMessage>{errors.ip.message}</S.ErrorMessage>}
     </>
   )
 }
@@ -94,5 +113,15 @@ const S = {
 
   HiddenText: styled.span`
     ${VisuallyHidden}
+  `,
+
+  ErrorMessage: styled.p`
+    color: #ff0000;
+    font-size: 30px;
+    font-weight: 700;
+
+    @media (max-width: 780px) {
+      font-size: 20px;
+    }
   `,
 }

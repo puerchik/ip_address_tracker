@@ -29,6 +29,9 @@ const ipTrackerSlice = createAppSlice({
   name: 'ipTracker',
   initialState,
   reducers: create => ({
+    setError: create.reducer<boolean | string>((state, action) => {
+      state.error = action.payload
+    }),
     fetchIpInfo: create.asyncThunk(
       async (ip: string, thunkApi) => {
         const { rejectWithValue } = thunkApi
@@ -78,4 +81,4 @@ const ipTrackerSlice = createAppSlice({
 })
 
 export const ipTrackerReducer = ipTrackerSlice.reducer
-export const { fetchIpInfo } = ipTrackerSlice.actions
+export const { fetchIpInfo, setError } = ipTrackerSlice.actions
