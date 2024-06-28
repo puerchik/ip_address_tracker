@@ -6,7 +6,7 @@ import { useAppDispatch } from 'shared/hooks/reduxHooks'
 
 import { ResetButton, VisuallyHidden } from 'styles/common'
 
-//import arrowIcon from 'assets/images/icon-arrow.svg'
+import arrowIcon from 'assets/images/icon-arrow.svg'
 
 export const SearchInput = () => {
   const dispatch = useAppDispatch()
@@ -94,7 +94,7 @@ const S = {
       transform: translate(-50%, -50%);
       width: 15px;
       aspect-ratio: 1;
-      background: green;
+      background: url(${arrowIcon}) center/contain no-repeat;
     }
 
     @media (hover: none) {
