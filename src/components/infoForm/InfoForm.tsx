@@ -11,7 +11,7 @@ export const InfoForm = () => {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    dispatch(fetchIpInfo('194.58.112.174'))
+    dispatch(fetchIpInfo(''))
   }, [])
 
   return (

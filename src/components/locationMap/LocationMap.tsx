@@ -5,8 +5,11 @@ import { Flex } from 'styles/common'
 import heagerImgDesktop from 'assets/images/pattern-bg-desktop.png'
 import heagerImgMobile from 'assets/images/pattern-bg-mobile.png'
 import { MapComponent } from 'components/mapComponent'
+import { useAppSelector } from 'shared/hooks/reduxHooks'
 
 export const LocationMap = () => {
+  const longitude = useAppSelector(state => state.ipTracker.ipInfo.longitude)
+
   return (
     <>
       <S.Wrapper>
@@ -14,9 +17,7 @@ export const LocationMap = () => {
           <source srcSet={heagerImgMobile} media="(max-width: 375px)" />
           <S.HeaderImage src={heagerImgDesktop} />
         </picture>
-        <S.Location>
-          <MapComponent />
-        </S.Location>
+        <S.Location>{!!longitude && <MapComponent />}</S.Location>
       </S.Wrapper>
     </>
   )

@@ -78,5 +78,6 @@ export const MapComponent = () => {
 const S = {
   MapWrapper: styled.div`
     flex-grow: 1;
+    background-color: #ffffff;
   `,
 }

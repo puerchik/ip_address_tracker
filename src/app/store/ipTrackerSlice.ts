@@ -56,12 +56,13 @@ const ipTrackerSlice = createAppSlice({
             return rejectWithValue(error.message)
           }
 
-          return rejectWithValue(error)
+          return rejectWithValue('Error')
         }
       },
       {
         pending: state => {
           state.loading = true
+          state.error = false
         },
         rejected: (state, action) => {
           state.loading = false
