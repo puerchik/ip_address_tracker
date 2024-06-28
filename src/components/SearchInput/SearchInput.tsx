@@ -86,17 +86,6 @@ const S = {
     border-bottom-right-radius: 15px;
     background-color: #000000;
     transition: 0.2s;
-    /* 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 15px;
-      aspect-ratio: 1;
-      background: url(${arrowIcon}) center/contain no-repeat;
-    } */
 
     & img {
       position: absolute;
