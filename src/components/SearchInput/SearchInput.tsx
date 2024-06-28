@@ -6,7 +6,7 @@ import { useAppDispatch } from 'shared/hooks/reduxHooks'
 
 import { ResetButton, VisuallyHidden } from 'styles/common'
 
-import arrowIcon from 'assets/images/icon-arrow.svg'
+//import arrowIcon from 'assets/images/icon-arrow.svg'
 
 export const SearchInput = () => {
   const dispatch = useAppDispatch()
