@@ -94,7 +94,7 @@ const S = {
       transform: translate(-50%, -50%);
       width: 15px;
       aspect-ratio: 1;
-      background: url(${arrowIcon}) center/contain no-repeat;
+      background: green;
     }
 
     @media (hover: none) {
